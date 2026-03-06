@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busca CEP por Endereço - Consulta Completa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📍 Busca CEP por Endereço</h1>
+            <p class="subtitle">Encontre o CEP informando o endereço completo</p>
+        </header>
+
+        <div class="progress-bar">
+            <div class="progress-step active" id="step1">
+                <span class="step-number">1</span>
+                <span class="step-text">Endereço</span>
+            </div>
+            <div class="progress-step" id="step2">
+                <span class="step-number">2</span>
+                <span class="step-text">Resultado</span>
+            </div>
+        </div>
+
+        <form id="enderecoForm" class="endereco-form">
+            <div class="form-section">
+                <h2>📋 Dados do Endereço</h2>
+                
+                <div class="input-group">
+                    <label for="uf">Estado *</label>
+                    <select id="uf" required>
+                        <option value="">Selecione o estado</option>
+                        <option value="AC">Acre (AC)</option>
+                        <option value="AL">Alagoas (AL)</option>
+                        <option value="AP">Amapá (AP)</option>
+                        <option value="AM">Amazonas (AM)</option>
+                        <option value="BA">Bahia (BA)</option>
+                        <option value="CE">Ceará (CE)</option>
+                        <option value="DF">Distrito Federal (DF)</option>
+                        <option value="ES">Espírito Santo (ES)</option>
+                        <option value="GO">Goiás (GO)</option>
+                        <option value="MA">Maranhão (MA)</option>
+                        <option value="MT">Mato Grosso (MT)</option>
+                        <option value="MS">Mato Grosso do Sul (MS)</option>
+                        <option value="MG">Minas Gerais (MG)</option>
+                        <option value="PA">Pará (PA)</option>
+                        <option value="PB">Paraíba (PB)</option>
+                        <option value="PR">Paraná (PR)</option>
+                        <option value="PE">Pernambuco (PE)</option>
+                        <option value="PI">Piauí (PI)</option>
+                        <option value="RJ">Rio de Janeiro (RJ)</option>
+                        <option value="RN">Rio Grande do Norte (RN)</option>
+                        <option value="RS">Rio Grande do Sul (RS)</option>
+                        <option value="RO">Rondônia (RO)</option>
+                        <option value="RR">Roraima (RR)</option>
+                        <option value="SC">Santa Catarina (SC)</option>
+                        <option value="SP">São Paulo (SP)</option>
+                        <option value="SE">Sergipe (SE)</option>
+                        <option value="TO">Tocantins (TO)</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="cidade">Cidade *</label>
+                    <input type="text" id="cidade" placeholder="Digite o nome da cidade" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="logradouro">Logradouro (Rua/Avenida) *</label>
+                    <input type="text" id="logradouro" placeholder="Digite o nome da rua ou avenida" required>
+                    <small class="input-hint">Ex: Avenida Paulista, Rua da Consolação...</small>
+                </div>
+
+                <div class="input-row">
+                    <div class="input-group half">
+                        <label for="numero">Número (opcional)</label>
+                        <input type="text" id="numero" placeholder="N°">
+                    </div>
+
+                    <div class="input-group half">
+                        <label for="bairro">Bairro (opcional)</label>
+                        <input type="text" id="bairro" placeholder="Bairro">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="complemento">Complemento (opcional)</label>
+                    <input type="text" id="complemento" placeholder="Apartamento, sala, etc.">
+                </div>
+            </div>
+
+            <div class="form-section search-section">
+                <button type="submit" class="search-btn" id="searchBtn">
+                    <span class="btn-icon">🔍</span>
+                    Buscar CEP
+                </button>
+                <button type="button" class="clear-btn" id="clearBtn">
+                    <span class="btn-icon">🗑️</span>
+                    Limpar
+                </button>
+            </div>
+        </form>
+
+        <div id="resultArea" class="result-area">
+            <!-- Resultados serão inseridos aqui -->
+        </div>
+
+        <div class="info-box">
+            <h3>💡 Dicas importantes:</h3>
+            <ul>
+                <li>Preencha pelo menos Estado, Cidade e Logradouro</li>
+                <li>Quanto mais informações, mais preciso será o resultado</li>
+                <li>A busca pode retornar múltiplos CEPs para o mesmo logradouro</li>
+                <li>Dados fornecidos pelo ViaCEP</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
